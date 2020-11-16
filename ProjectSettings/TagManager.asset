@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - PlayerLife
   - Floor
+  - Block
   layers:
   - Default
   - TransparentFX
