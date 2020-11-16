@@ -37,6 +37,7 @@ public class BrickTrapController : TrapController
 
             OnTrapDestroy?.Invoke(gameObject);
             isTriggered = true;
+            Destroy(gameObject, 3f);
         }
     }
 
