@@ -32,10 +32,12 @@ public class BrickTrapController : TrapController
             foreach (var _rb in _rigidbodies)
             {
                 _rb.isKinematic = false;
+                _rb.tag = "Untagged";
             }
 
             OnTrapDestroy?.Invoke(gameObject);
             isTriggered = true;
+            Destroy(gameObject, 3f);
         }
     }
 

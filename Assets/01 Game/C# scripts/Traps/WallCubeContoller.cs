@@ -20,6 +20,7 @@ public class WallCubeContoller : MonoBehaviour
             if (isThisCubeForWin)
             {
                 _renderer.material.color = color;
+                transform.tag = "Enemy";
                 //_rigidbody.isKinematic = false;
             }
         }
