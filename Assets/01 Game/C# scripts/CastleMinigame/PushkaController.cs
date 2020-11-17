@@ -20,8 +20,8 @@ public class PushkaController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                var renderer = hit.transform.GetComponent<Renderer>();
-                renderer.material.color = Color.blue;
+                //var renderer = hit.transform.GetComponent<Renderer>();
+               // renderer.material.color = Color.blue;
                 var distance = Vector3.Distance(bulletParent.position, hit.transform.position);
                 sphere.transform.LookAt(hit.point);
                 force += distance;
