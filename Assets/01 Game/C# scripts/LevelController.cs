@@ -21,7 +21,7 @@ public class LevelController : MonoBehaviour
             castleMinigameController.PushkaController.enabled = true;
             castleMinigameController.CastleController.StartMinigame();
         });
-        GameManager.Instance.Player.gameObject.SetActive(false);
+        GameManager.Instance.Player.enabled = false;
         castleMinigameController.OnComplete += NextLevel;
        
     }
@@ -30,10 +30,10 @@ public class LevelController : MonoBehaviour
         castleMinigameController.OnGameStart -= CastleMiniGameActivate;
         castleMinigameController.OnComplete -= NextLevel;
         castleMinigameController.PushkaController.enabled = false;
-        GameManager.Instance.Player.gameObject.SetActive(true);
+        GameManager.Instance.Player.enabled = true;
         GameManager.Instance.CameraController.SwitchToPlayerCamera(1f).OnComplete(() =>
         {
-            GameManager.Instance.Player.DOMove(castleMinigameController.End.position, 0.5f);
+            GameManager.Instance.Player.gameObject.transform.DOMove(castleMinigameController.End.position, 0.5f);
         });
     }
 }

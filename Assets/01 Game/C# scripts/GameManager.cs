@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Bolt;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -10,7 +11,8 @@ public class GameManager : MonoBehaviour
     public PlayerController PlayerController;
     public CameraController CameraController;
     public LevelController LevelController;
-    public Transform Player;
+    //public Transform Player;
+    public FlowMachine Player;
 
     private void Awake()
     {
