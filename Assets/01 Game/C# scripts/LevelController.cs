@@ -7,6 +7,7 @@ using UnityEngine;
 public class LevelController : MonoBehaviour
 {
     [SerializeField] private GameObject castle;
+    [SerializeField] private GameObject startFloorPrefab;
     private CastleMinigameController castleMinigameController;
 
     public GameObject Castle
@@ -20,7 +21,7 @@ public class LevelController : MonoBehaviour
             castle = value;
             castleMinigameController = castle.GetComponent<CastleMinigameController>();
             castleMinigameController.OnGameStart += CastleMiniGameActivate;
-            castleMinigameController.OnComplete += NextLevel;
+            //castleMinigameController.OnComplete += NextLevel;
         }
     }
     
@@ -32,18 +33,29 @@ public class LevelController : MonoBehaviour
             castleMinigameController.CastleController.StartMinigame();
         });
         GameManager.Instance.Player.enabled = false;
-        castleMinigameController.OnComplete += NextLevel;
+       castleMinigameController.OnComplete += NextLevel;
     }
     
     private void NextLevel()
     {
         castleMinigameController.OnGameStart -= CastleMiniGameActivate;
         castleMinigameController.OnComplete -= NextLevel;
+
+        var previousEndPoint = castleMinigameController.End;
+        var endCastlePoint = castleMinigameController.End;
+        var startFloor = Instantiate(startFloorPrefab);
+        var startFloorStartPoint = startFloor.transform.GetChild(1);
+        startFloor.transform.position = endCastlePoint.position;
+        
+        var distance = Vector3.Distance(startFloorStartPoint.position, endCastlePoint.position);
+        startFloor.transform.position += new Vector3(0,0,distance);
+        
+        
         castleMinigameController.PushkaController.enabled = false;
         GameManager.Instance.Player.enabled = true;
         GameManager.Instance.CameraController.SwitchToPlayerCamera(1f).OnComplete(() =>
         {
-            GameManager.Instance.Player.gameObject.transform.DOMove(castleMinigameController.End.position, 0.5f);
+            GameManager.Instance.Player.gameObject.transform.DOMove(previousEndPoint.position, 0.5f);
         });
     }
 }
