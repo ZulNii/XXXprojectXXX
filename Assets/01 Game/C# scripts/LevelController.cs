@@ -6,14 +6,25 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour
 {
-    [SerializeField] private CastleMinigameController castleMinigameController;
+    [SerializeField] private GameObject castle;
+    private CastleMinigameController castleMinigameController;
 
-    private void Start()
+    public GameObject Castle
     {
-        castleMinigameController.OnGameStart += CastleMiniGameActivate;
-        castleMinigameController.OnComplete += NextLevel;
+        get
+        {
+            return castle;
+        }
+        set
+        {
+            castle = value;
+            castleMinigameController = castle.GetComponent<CastleMinigameController>();
+            castleMinigameController.OnGameStart += CastleMiniGameActivate;
+            castleMinigameController.OnComplete += NextLevel;
+            CastleMiniGameActivate();
+        }
     }
-
+    
     private void CastleMiniGameActivate()
     {
         GameManager.Instance.CameraController.SwitchCameraTo(castleMinigameController.Camera,1f).OnComplete(() =>
@@ -23,8 +34,8 @@ public class LevelController : MonoBehaviour
         });
         GameManager.Instance.Player.enabled = false;
         castleMinigameController.OnComplete += NextLevel;
-       
     }
+    
     private void NextLevel()
     {
         castleMinigameController.OnGameStart -= CastleMiniGameActivate;
