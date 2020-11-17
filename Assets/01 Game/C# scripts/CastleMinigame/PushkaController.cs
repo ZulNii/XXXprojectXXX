@@ -8,9 +8,8 @@ public class PushkaController : MonoBehaviour
     [SerializeField] private Transform bulletParent;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform sphere;
-    [SerializeField] private float pushForce = 300f;
     private Vector3 mousePosition;
-    [SerializeField] private float force;
+    private float force;
 
     private void Update()
     {
@@ -24,7 +23,6 @@ public class PushkaController : MonoBehaviour
                 var renderer = hit.transform.GetComponent<Renderer>();
                 renderer.material.color = Color.blue;
                 var distance = Vector3.Distance(bulletParent.position, hit.transform.position);
-
                 sphere.transform.LookAt(hit.point);
                 force += distance;
             }
