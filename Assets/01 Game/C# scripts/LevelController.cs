@@ -21,7 +21,6 @@ public class LevelController : MonoBehaviour
             castleMinigameController = castle.GetComponent<CastleMinigameController>();
             castleMinigameController.OnGameStart += CastleMiniGameActivate;
             castleMinigameController.OnComplete += NextLevel;
-            CastleMiniGameActivate();
         }
     }
     
