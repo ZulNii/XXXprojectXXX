@@ -16,12 +16,12 @@ public class CameraController : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera currentCamera;
 
     
-    public void SwitchToPlayerCamera(float transitionTime)
+    public Tween SwitchToPlayerCamera(float transitionTime)
     {
-        SwitchCameraTo(playerCamera, transitionTime);
+        return SwitchCameraTo(playerCamera, transitionTime);
     }
     
-    public void SwitchCameraTo(CinemachineVirtualCamera camera, float transitionTime)
+    public Tween SwitchCameraTo(CinemachineVirtualCamera camera, float transitionTime)
     {
         cinemachineBrain.m_DefaultBlend.m_Time = transitionTime;
         currentCamera.Priority = 0;
@@ -30,7 +30,7 @@ public class CameraController : MonoBehaviour
 
         Sequence sequence = DOTween.Sequence();
         sequence.AppendInterval(transitionTime);
-        sequence.AppendCallback(() =>
+        return sequence.AppendCallback(() =>
         {
             OnTransitionEnd?.Invoke();
             cinemachineBrain.m_DefaultBlend.m_Time = defaultTransitionTime;

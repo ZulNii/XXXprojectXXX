@@ -8,6 +8,7 @@ TagManager:
   - PlayerLife
   - Floor
   - Block
+  - Bullet
   layers:
   - Default
   - TransparentFX

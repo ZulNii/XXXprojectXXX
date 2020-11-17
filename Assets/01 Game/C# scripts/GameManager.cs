@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public PlayerController PlayerController;
     public CameraController CameraController;
+    public LevelController LevelController;
+    public Transform Player;
 
     private void Awake()
     {
