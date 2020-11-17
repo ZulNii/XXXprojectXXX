@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"declarations":{"collection":{"$content":[{"name":"FloorEnter","value":{"$content":0,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"FloorExet","value":{"$content":1,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"SpawnFloor","value":{"$content":2,"$type":"UnityEngine.Object"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+    _json: '{"declarations":{"collection":{"$content":[{"name":"FloorEnter","value":{"$content":0,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"FloorExet","value":{"$content":1,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"SpawnFloor","value":{"$content":2,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"LevelControllerContaner","value":null,"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
     - {fileID: 6923330851212363548}
     - {fileID: 6484798754759837129}
