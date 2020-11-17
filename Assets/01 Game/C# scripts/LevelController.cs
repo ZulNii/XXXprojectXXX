@@ -55,7 +55,8 @@ public class LevelController : MonoBehaviour
         GameManager.Instance.Player.enabled = true;
         GameManager.Instance.CameraController.SwitchToPlayerCamera(1f).OnComplete(() =>
         {
-            GameManager.Instance.Player.gameObject.transform.DOMove(previousEndPoint.position, 0.5f);
+            GameManager.Instance.Player.gameObject.transform.DOMoveX(previousEndPoint.position.x, 0.5f);
+            GameManager.Instance.Player.gameObject.transform.DOMoveZ(previousEndPoint.position.z, 0.5f);
         });
     }
 }
