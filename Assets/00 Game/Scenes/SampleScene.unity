@@ -243,6 +243,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1750447914}
     - target: {fileID: 3393861326399700410, guid: d08055b8f9afc7947b91c7ae04416af3, type: 3}
+      propertyPath: SceneVariables
+      value: 
+      objectReference: {fileID: 184660282}
+    - target: {fileID: 3393861326399700410, guid: d08055b8f9afc7947b91c7ae04416af3, type: 3}
       propertyPath: CameraController
       value: 
       objectReference: {fileID: 963194232}
