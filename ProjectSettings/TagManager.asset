@@ -9,6 +9,7 @@ TagManager:
   - Floor
   - Block
   - Bullet
+  - TNT
   layers:
   - Default
   - TransparentFX

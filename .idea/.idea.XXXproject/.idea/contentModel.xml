@@ -8,15 +8,29 @@
         <e p="01 Game" t="Include">
           <e p="AddForce.cs" t="Include" />
           <e p="C# scripts" t="Include">
+            <e p="CastleMinigame" t="Include">
+              <e p="BulletController.cs" t="Include" />
+              <e p="CastleController.cs" t="Include" />
+              <e p="CastleCubeController.cs" t="Include" />
+              <e p="CastleMinigameController.cs" t="Include" />
+              <e p="FinishTriggerController.cs" t="Include" />
+              <e p="PushkaController.cs" t="Include" />
+            </e>
             <e p="GameManager.cs" t="Include" />
+            <e p="LevelController.cs" t="Include" />
             <e p="LevelGenerator.cs" t="Include" />
             <e p="PickUpStuff" t="Include">
               <e p="StuffController.cs" t="Include" />
             </e>
             <e p="PlaneController.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
+            <e p="ProjectileHelper.cs" t="Include" />
+            <e p="Tools" t="Include">
+              <e p="CameraController.cs" t="Include" />
+            </e>
             <e p="Traps" t="Include">
               <e p="BrickTrapController.cs" t="Include" />
+              <e p="Floor2Controller.cs" t="Include" />
               <e p="JumpTrapController.cs" t="Include" />
               <e p="JumpTrigger.cs" t="Include" />
               <e p="TrapController.cs" t="Include" />
@@ -26,9 +40,6 @@
             </e>
           </e>
           <e p="MeshSpawner.cs" t="Include" />
-          <e p="Scenes" t="Include">
-            <e p="DotweenPathTest.cs" t="Include" />
-          </e>
         </e>
         <e p="Ludiq" t="Include">
           <e p="Assemblies" t="Include">
