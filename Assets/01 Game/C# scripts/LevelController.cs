@@ -40,7 +40,7 @@ public class LevelController : MonoBehaviour
     {
         castleMinigameController.OnGameStart -= CastleMiniGameActivate;
         castleMinigameController.OnComplete -= NextLevel;
-
+        Destroy(castleMinigameController.gameObject,3f);
         var previousEndPoint = castleMinigameController.End;
         var endCastlePoint = castleMinigameController.End;
         var startFloor = Instantiate(startFloorPrefab);

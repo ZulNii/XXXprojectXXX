@@ -42,7 +42,6 @@ public class CastleMinigameController : MonoBehaviour
             if (progress >= 40)
             {
                 OnComplete?.Invoke();
-                Destroy(CastleController.gameObject);
             }
         }
     }
