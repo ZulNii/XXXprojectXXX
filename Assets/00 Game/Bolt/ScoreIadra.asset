@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1893448595, guid: a040fb66244a7f54289914d98ea4ef7d, type: 3}
+  m_Name: ScoreIadra
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":175.0,"y":51.26321},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-204.0,"y":60.0},"guid":"b9bf87fc-7583-4b06-9a87-13431db95792","$version":"A","$type":"Bolt.Update","$id":"9"},{"specifyFallback":false,"kind":"Scene","defaultValues":{"name":{"$content":"PlayerLifeScoreObjectList","$type":"System.String"}},"position":{"x":-343.0,"y":208.0},"guid":"dff0ecf3-3f2c-467b-b836-2887d05fb55f","$version":"A","$type":"Bolt.GetVariable","$id":"11"},{"defaultValues":{},"position":{"x":-55.0,"y":215.0},"guid":"c1f070c3-7f06-464f-adf8-490b8923f006","$version":"A","$type":"Bolt.CountItems","$id":"13"},{"chainable":false,"member":{"name":"ToString","parameterTypes":[],"targetType":"System.Int32","targetTypeName":"System.Int32","$version":"A"},"defaultValues":{"target":{"$content":0,"$type":"System.Int32"}},"position":{"x":131.0,"y":121.0},"guid":"93ffb3dc-fdad-454e-8b45-87f83343be62","$version":"A","$type":"Bolt.InvokeMember","$id":"15"},{"chainable":false,"member":{"name":"text","parameterTypes":null,"targetType":"UnityEngine.UI.Text","targetTypeName":"UnityEngine.UI.Text","$version":"A"},"defaultValues":{"target":null,"input":{"$content":"","$type":"System.String"}},"position":{"x":343.0,"y":93.0},"guid":"11d8fd01-0772-4411-aa26-cbecb7125a4c","$version":"A","$type":"Bolt.SetMember","$id":"18"},{"sourceUnit":{"$ref":"9"},"sourceKey":"trigger","destinationUnit":{"$ref":"15"},"destinationKey":"enter","guid":"9e57b712-4479-47e1-8f9d-22d08191a59b","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"15"},"sourceKey":"exit","destinationUnit":{"$ref":"18"},"destinationKey":"assign","guid":"2d6584c4-9d4f-46cb-9528-b6ecf6ffd606","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"11"},"sourceKey":"value","destinationUnit":{"$ref":"13"},"destinationKey":"collection","guid":"a25f27bc-642c-4e4d-96f5-d22e817eb5de","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"13"},"sourceKey":"count","destinationUnit":{"$ref":"15"},"destinationKey":"target","guid":"f334a7a9-34c3-481f-8d8c-9b07d2847641","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"15"},"sourceKey":"result","destinationUnit":{"$ref":"18"},"destinationKey":"input","guid":"5e59ab1b-8686-4cdb-88a7-2eefe01c8e9c","$type":"Bolt.ValueConnection"}],"$version":"A"}}'
+    _objectReferences: []

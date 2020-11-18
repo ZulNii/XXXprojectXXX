@@ -310,14 +310,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2701938490608007805, guid: 820dff89c0b634f34b90b41ce991922b, type: 3}
-      propertyPath: _data._json
-      value: '{"declarations":{"collection":{"$content":[{"name":"SpawnList","value":{"$content":[{"$content":0,"$type":"UnityEngine.Object"},{"$content":1,"$type":"UnityEngine.Object"},null],"$type":"Ludiq.AotList"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
-      objectReference: {fileID: 0}
-    - target: {fileID: 2701938490608007805, guid: 820dff89c0b634f34b90b41ce991922b, type: 3}
-      propertyPath: _data._objectReferences.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8274827795648275074, guid: 820dff89c0b634f34b90b41ce991922b, type: 3}
       propertyPath: m_Name
       value: SompfingSpawner (2)
