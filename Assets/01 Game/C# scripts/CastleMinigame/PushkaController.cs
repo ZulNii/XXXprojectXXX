@@ -15,6 +15,15 @@ public class PushkaController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            var friendList = GameManager.Instance.GetPlayerLifeScoreObjectList();
+            if(friendList.Count==0) return;
+            
+            var lastObj = friendList[friendList.Count - 1];
+            friendList.Remove(lastObj);
+            Destroy(lastObj);
+            GameManager.Instance.UpdateBoltList();
+            
+            
             var pos = Input.mousePosition;
             Ray ray = Camera.main.ScreenPointToRay(pos);
             RaycastHit hit;

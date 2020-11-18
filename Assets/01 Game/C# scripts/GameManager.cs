@@ -23,7 +23,11 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> GetPlayerLifeScoreObjectList()
     {
-        var list = Variables.Scene(gameObject).Get<List<GameObject>>("PlayerLifeScoreObjectList");
-        return list;
+       return Variables.Scene(gameObject).Get<List<GameObject>>("PlayerLifeScoreObjectList");
+    }
+
+    public void UpdateBoltList()
+    {
+        Variables.Scene(gameObject).Set("PlayerLifeScoreObjectList",GetPlayerLifeScoreObjectList());
     }
 }
