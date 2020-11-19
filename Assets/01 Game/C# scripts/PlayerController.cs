@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             if (deltaMousePosition == Vector3.zero) return;
-            transform.position += deltaMousePosition * (swipeSpeed * Time.deltaTime);
+            transform.position += deltaMousePosition * swipeSpeed;
             var currentPosition = transform.position;
             var fixedXPosition = Mathf.Clamp(currentPosition.x, -4.37f, 4.45f);
             var newPosition = currentPosition;

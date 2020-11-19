@@ -21,11 +21,14 @@ public class GameManager : MonoBehaviour
         if (Instance == null) Instance = this;
     }
 
+    
+    //fuck
     public List<GameObject> GetPlayerLifeScoreObjectList()
     {
        return Variables.Scene(gameObject).Get<List<GameObject>>("PlayerLifeScoreObjectList");
     }
 
+    //fuck
     public void UpdateBoltList()
     {
         Variables.Scene(gameObject).Set("PlayerLifeScoreObjectList",GetPlayerLifeScoreObjectList());

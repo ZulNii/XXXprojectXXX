@@ -6,10 +6,15 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour
 {
+    [SerializeField] private float nextLevelDelay;
+    //fuck
     [SerializeField] private GameObject castle;
+    //fuckk
     [SerializeField] private GameObject startFloorPrefab;
+    
+    //fuck
     private CastleMinigameController castleMinigameController;
-
+    //fuck
     public GameObject Castle
     {
         get
@@ -38,25 +43,33 @@ public class LevelController : MonoBehaviour
     
     private void NextLevel()
     {
-        castleMinigameController.OnGameStart -= CastleMiniGameActivate;
-        castleMinigameController.OnComplete -= NextLevel;
-        Destroy(castleMinigameController.gameObject,3f);
-        var previousEndPoint = castleMinigameController.End;
-        var endCastlePoint = castleMinigameController.End;
-        var startFloor = Instantiate(startFloorPrefab);
-        var startFloorStartPoint = startFloor.transform.GetChild(1);
-        startFloor.transform.position = endCastlePoint.position;
-        
-        var distance = Vector3.Distance(startFloorStartPoint.position, endCastlePoint.position);
-        startFloor.transform.position += new Vector3(0,0,distance);
-        
-        
-        castleMinigameController.PushkaController.enabled = false;
-        GameManager.Instance.Player.enabled = true;
-        GameManager.Instance.CameraController.SwitchToPlayerCamera(1f).OnComplete(() =>
+        Sequence sequence = DOTween.Sequence();
+        sequence.AppendInterval(nextLevelDelay);
+        sequence.AppendCallback(() =>
         {
-            GameManager.Instance.Player.gameObject.transform.DOMoveX(previousEndPoint.position.x, 0.5f);
-            GameManager.Instance.Player.gameObject.transform.DOMoveZ(previousEndPoint.position.z, 0.5f);
+            var player = GameManager.Instance.Player;
+            castleMinigameController.OnGameStart -= CastleMiniGameActivate;
+            castleMinigameController.OnComplete -= NextLevel;
+        
+            Destroy(castleMinigameController.gameObject,3f);
+        
+            var previousEndPoint = castleMinigameController.End;
+            var endCastlePoint = castleMinigameController.End;
+            var startFloor = Instantiate(startFloorPrefab);
+            var startFloorStartPoint = startFloor.transform.GetChild(1);
+            startFloor.transform.position = endCastlePoint.position;
+        
+            var distance = Vector3.Distance(startFloorStartPoint.position, endCastlePoint.position);
+            startFloor.transform.position += new Vector3(0,0,distance);
+        
+            castleMinigameController.PushkaController.enabled = false;
+            player.enabled = true;
+        
+            GameManager.Instance.CameraController.SwitchToPlayerCamera(1f).OnComplete(() =>
+            {
+                player.transform.DOMoveX(previousEndPoint.position.x, 0.5f);
+                player.transform.DOMoveZ(previousEndPoint.position.z, 0.5f);
+            });
         });
     }
 }
