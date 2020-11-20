@@ -296,7 +296,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.4
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1741,7 +1741,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8077c8da5b56f7e4d9a5133ad729e851, type: 2}
     - target: {fileID: 6695190440736325316, guid: 26b8fec0904288b49b3b232fa19ad59a, type: 3}
       propertyPath: _data._json
-      value: '{"declarations":{"collection":{"$content":[{"name":"PlayerSpeed","value":{"$content":20.0,"$type":"System.Single"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      value: '{"declarations":{"collection":{"$content":[{"name":"PlayerSpeed","value":{"$content":20.0,"$type":"System.Single"},"$version":"A"},{"name":"PlayerXMove","value":{"$content":8.0,"$type":"System.Single"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
       objectReference: {fileID: 0}
     - target: {fileID: 6695190440736325316, guid: 26b8fec0904288b49b3b232fa19ad59a, type: 3}
       propertyPath: _data._objectReferences.Array.size
