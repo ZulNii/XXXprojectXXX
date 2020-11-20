@@ -6,23 +6,40 @@ using DG.Tweening;
 
 public class CastleCubeController : MonoBehaviour
 {
-    [SerializeField] private Vector3 defaultPosition;
-    [SerializeField] private Rigidbody _rigidbody;
+    public Rigidbody Rb;
+    [SerializeField] private Renderer _renderer;
     private bool isTriggered;
     public Action OnComplete;
 
+    private bool isTNT;
+
+    public bool IsTnt
+    {
+        get => isTNT;
+        set
+        {
+            isTNT = value;
+            if (isTNT)
+            {
+                _renderer.material.color = Color.red;
+            }
+        }
+    }
+
     private void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody>();
+        Rb = GetComponent<Rigidbody>();
+        _renderer = GetComponent<Renderer>();
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if(other.transform.CompareTag("Bullet") &&!isTriggered)
+        if(other.transform.CompareTag("Bullet") &&!isTriggered && isTNT)
         {
             isTriggered = true;
-            _rigidbody.isKinematic = false;
-            OnComplete?.Invoke();
+            Rb.isKinematic = false;
+            transform.DOScale(5, 0.2f);
+            _renderer.material.DOColor(Color.green, 0.2f).OnComplete(()=> OnComplete?.Invoke());
         }
     }
 }
